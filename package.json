@@ -1,6 +1,6 @@
 {
   "name": "appboard-wla",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Application board page listing the applications a server publishes",
   "license": "MIT",
   "type": "module",

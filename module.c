@@ -1,10 +1,10 @@
 #include "config.h"
 
 #include <libnetq/Library.h>
-#include <libnetq/Path.h>
+#include <libnetq/fs/Path.h>
 #include <libnetq/ErrorCode.h>
-#include <libnetq/HttpHeader.h>
-#include <libnetq/MediaType.h>
+#include <libnetq/http/HttpHeader.h>
+#include <libnetq/http/MediaType.h>
 #include <libnetq/Module.h>
 #include <libnetq/json/JSONWriter.h>
 #include <libnetq/Array.h>
