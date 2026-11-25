@@ -60,8 +60,11 @@ source_group(TREE "${CMAKE_CURRENT_SOURCE_DIR}" FILES server.c)
 add_executable(appboard_server server.c)
 target_link_libraries(appboard_server PRIVATE LibNetQ::LibNetQ)
 
-if (CMAKE_C_COMPILER_ID MATCHES "^(GNU|Clang)$")
-  target_link_options(appboard_server PRIVATE "-Wl,-rpath,$ORIGIN/../lib")
+if (APPLE)
+  set_target_properties(appboard_server PROPERTIES INSTALL_RPATH "@loader_path/../lib")
+elseif (UNIX)
+  set_target_properties(appboard_server PROPERTIES INSTALL_RPATH "$ORIGIN/../lib")
+  target_link_options(appboard_server PRIVATE -Wl,--disable-new-dtags)
 endif ()
 
 if (APPBOARD_INSTALL_SERVER)
